@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    padding: 2rem;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background: url("../assets/images/square.png");
+    background-size: cover;
+}
+
+.btn {
+    background: chocolate;
+    color: white;
+}
