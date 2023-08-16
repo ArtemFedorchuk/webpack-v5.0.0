@@ -1,6 +1,9 @@
+@import "font.css";
+
 body {
     text-align: center;
     padding: 2rem;
+    font-family: "Mont-SemiBold", sans-serif;
 }
 
 .logo {
