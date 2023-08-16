@@ -1,9 +1,11 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 const cssLoaders = (extraLoader) => {
-  const loaders = ['style-loader', 'css-loader'];
+  const loaders = [MiniCssExtractPlugin.loader, 'css-loader'];
 
   if(extraLoader) {
     loaders.push(extraLoader);
@@ -23,12 +25,28 @@ module.exports = {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist')
   },
+  devServer: {
+    open: true,
+    // port: 3008,
+    hot: false
+  },
+  target: 'web',
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+      assets: path.resolve(__dirname, 'src/assets'),
+      styles: path.resolve(__dirname, 'src/styles'),
+    }
+  },
   plugins: [
     new HTMLWebpackPlugin({
       title: "Webpack App",
       template: './index.html'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    })
   ],
   module: {
     rules: [
@@ -46,7 +64,7 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
-        use: 'file-loader'
+        use: 'file-loader',
       }
     ]
   }
