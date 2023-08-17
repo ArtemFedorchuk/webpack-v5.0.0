@@ -25,7 +25,7 @@ const optimization = () => {
 }
 
 const languageLoaders = (lang) => {
-//
+// some code
 }
 
 const cssLoaders = (extraLoader) => {
