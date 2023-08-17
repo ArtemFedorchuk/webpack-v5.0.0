@@ -1,10 +1,10 @@
 function createAnalytics() {
-    let counter = 0;
-    let isDestroyed = false;
+    let counter: number = 0;
+    let isDestroyed: boolean = false;
 
     const button = document.querySelector('.btn');
 
-    const listener = () => counter++;
+    const listener = (): number => counter++;
 
 
     button.addEventListener('click', listener);
@@ -23,3 +23,5 @@ function createAnalytics() {
         }
     }
 }
+
+window["analytics"] = createAnalytics();
