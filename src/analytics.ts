@@ -15,7 +15,7 @@ function createAnalytics() {
             isDestroyed = true;
         },
         getClicks() {
-            if(isDestroyed){
+            if (isDestroyed) {
                 return 'Analytics is destroyed'
             }
 
