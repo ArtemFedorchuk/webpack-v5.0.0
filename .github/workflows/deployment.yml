@@ -1,0 +1,22 @@
+name: Deploy Webpack App
+
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get a repository code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Test app build
+        run: npm run dev
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get a repository code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint App
+        run: npm run lint:check
