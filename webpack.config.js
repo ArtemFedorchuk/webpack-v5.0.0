@@ -25,10 +25,6 @@ const optimization = () => {
 	return config;
 }
 
-const languageLoaders = (lang) => {
-// some code
-}
-
 const cssLoaders = (extraLoader) => {
 	const loaders = [ MiniCssExtractPlugin.loader, 'css-loader' ];
 
@@ -39,13 +35,25 @@ const cssLoaders = (extraLoader) => {
 	return loaders;
 };
 
+const babelOptions = (preset) => {
+	const options = {
+		presets: [ '@babel/preset-env' ]
+	}
+
+	if(preset) {
+		options.presets.push(preset)
+	}
+
+	return options
+}
+
 console.log('mode', process.env.NODE_ENV)
 
 module.exports = {
 	mode: process.env.NODE_ENV,
 	context: path.resolve(__dirname, 'src'),
 	entry: {
-		main: './index.js',
+		main: './index.jsx',
 		analytics: './analytics.ts'
 	},
 	output: {
@@ -110,9 +118,7 @@ module.exports = {
 				exclude: /node_modules/,
 				use: {
 					loader: "babel-loader",
-					options: {
-						presets: [ '@babel/preset-env' ]
-					}
+					options: babelOptions()
 				}
 			},
 			{
@@ -120,9 +126,15 @@ module.exports = {
 				exclude: /node_modules/,
 				use: {
 					loader: "babel-loader",
-					options: {
-						presets: [ '@babel/preset-env', "@babel/preset-typescript" ]
-					}
+					options: babelOptions("@babel/preset-typescript")
+				}
+			},
+			{
+				test: /\.m?jsx$/,
+				exclude: /node_modules/,
+				use: {
+					loader: "babel-loader",
+					options: babelOptions("@babel/preset-react")
 				}
 			},
 		]
