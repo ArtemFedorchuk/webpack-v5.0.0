@@ -22,7 +22,6 @@ jobs:
       - name: Lint App
         run: npm run lint:check
   build:
-    name: App build
     runs-on: ubuntu-latest
     needs: lint
     steps:
