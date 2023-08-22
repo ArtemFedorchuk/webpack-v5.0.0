@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -93,6 +94,9 @@ module.exports = {
 			emitWarning: true,
 			failOnError: true,
 			overrideConfigFile: "./.eslintrc.js",
+		}),
+		new webpack.ProvidePlugin({
+			'React':     'react', // this row lets to don't write this (import React from "react";) in each react components!
 		})
 	],
 	module: {
