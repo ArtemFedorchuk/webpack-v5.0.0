@@ -96,7 +96,7 @@ module.exports = {
 			overrideConfigFile: "./.eslintrc.js",
 		}),
 		new webpack.ProvidePlugin({
-			'React':     'react', // this row lets to don't write this (import React from "react";) in each react components!
+			'React': 'react', // this row lets to don't write this (import React from "react";) in each react components!
 		})
 	],
 	module: {
