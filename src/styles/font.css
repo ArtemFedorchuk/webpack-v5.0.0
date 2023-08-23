@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Mont-Regular";
+    src: url("../assets/fonts/Mont/Mont-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Mont-RegularItalic";
+    src: url("../assets/fonts/Mont/Mont-RegularItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Mont-SemiBold";
+    src: url("../assets/fonts/Mont/Mont-SemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Mont-Bold";
+    src: url("../assets/fonts/Mont/Mont-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

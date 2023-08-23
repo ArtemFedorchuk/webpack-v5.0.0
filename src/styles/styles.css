@@ -1,0 +1,20 @@
+@import "font.css";
+
+body {
+    text-align: center;
+    padding: 2rem;
+    font-family: "Mont-SemiBold", sans-serif;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background: url("../assets/images/square.png");
+    background-size: cover;
+}
+
+.btn {
+    background: chocolate;
+    color: white;
+}
